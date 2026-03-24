@@ -23,3 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 public/video/alberello-2019.mp4
+.vercel
