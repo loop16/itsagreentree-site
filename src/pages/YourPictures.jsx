@@ -9,10 +9,9 @@ const pictures = [
   { src: '/images/your-trees/20.jpeg', alt: 'Community tree 20' },
   { src: '/images/your-trees/21.jpeg', alt: 'Community tree 21' },
   { src: '/images/your-trees/22.jpeg', alt: 'Community tree 22' },
-  ...Array.from({ length: 18 }, (_, i) => ({
-    src: `/images/your-trees/${i + 23}.jpg`,
-    alt: `Community tree ${i + 23}`,
-  })),
+  ...Array.from({ length: 18 }, (_, i) => i + 23)
+    .filter((n) => n !== 32)
+    .map((n) => ({ src: `/images/your-trees/${n}.jpg`, alt: `Community tree ${n}` })),
 ]
 
 export default function YourPictures() {
