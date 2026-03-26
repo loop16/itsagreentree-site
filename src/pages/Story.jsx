@@ -19,15 +19,14 @@ export default function Story() {
         </div>
 
         {/* Video */}
-        <div className="rounded-2xl overflow-hidden shadow-2xl bg-black">
-          <video
-            controls
-            poster="/images/trees/threetrees.jpg"
-            className="w-full aspect-video"
-          >
-            <source src="/video/alberello-2019.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
+          <iframe
+            src="https://player.vimeo.com/video/371690517?title=0&byline=0&portrait=0"
+            className="w-full h-full"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="The Alberello Story"
+          />
         </div>
 
         {/* Story text */}

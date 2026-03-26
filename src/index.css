@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest: #2d5016;
-  --color-forest-light: #3a6b1e;
+  --color-forest: #39b54a;
+  --color-forest-light: #2e9a3e;
   --color-sage: #7a9e6d;
   --color-sage-light: #a8c49b;
   --color-cream: #faf8f5;
@@ -12,11 +12,16 @@
   --color-bark: #5c4a32;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Playfair Display', Georgia, serif;
+  --font-avenir: 'Avenir Next', 'Avenir', 'Century Gothic', 'Trebuchet MS', sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar {
+    display: none;
   }
   body {
     font-family: var(--font-sans);

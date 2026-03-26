@@ -62,12 +62,14 @@ export default function Home() {
                 <span className="absolute -inset-x-3 -inset-y-1 -z-10 pointer-events-none" aria-hidden="true">
                   <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b5" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur in="SourceGraphic" stdDeviation="14" /></filter></defs><rect width="100%" height="100%" fill="rgba(240,244,240,0.9)" filter="url(#b5)" /></svg>
                 </span>
-                <Link
-                  to="/story"
+                <a
+                  href="https://vimeo.com/371690517"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-3.5 border border-[#333]/30 text-[#1a1a1a] font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-white/30 transition-colors inline-block"
                 >
                   Watch Our Story
-                </Link>
+                </a>
               </span>
             </div>
           </div>
@@ -204,16 +206,16 @@ export default function Home() {
       </section>
 
       {/* Community */}
-      <section className="bg-bark py-20">
+      <section className="bg-warm py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-medium tracking-[0.2em] uppercase text-sage-light mb-2">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-sage mb-2">
               Community
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-bark">
               Your Trees
             </h2>
-            <p className="mt-3 text-warm/60 max-w-md mx-auto">
+            <p className="mt-3 text-wood-dark max-w-md mx-auto">
               See how our community decorates their Alberellos
             </p>
           </div>
@@ -234,7 +236,7 @@ export default function Home() {
           <div className="text-center mt-10">
             <Link
               to="/your-pictures"
-              className="inline-flex items-center gap-2 px-8 py-3.5 border border-white/30 text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors shadow-md"
             >
               See All Pictures
               <ArrowRight size={16} />

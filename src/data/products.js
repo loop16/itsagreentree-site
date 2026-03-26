@@ -3,16 +3,19 @@ export const products = [
     slug: 'alberello',
     name: 'The Alberello',
     tagline: 'The Original Hanging Tree',
-    price: 220,
+    price: 275,
+    variants: [
+      { label: 'Plain', price: 275 },
+      { label: 'With 1 Set of Decorations', price: 340 },
+      { label: 'With 2 Sets of Decorations', price: 390 },
+    ],
     description:
       'The Alberello is our signature hanging holiday tree — the original. Beautiful spiral rings crafted from natural birch plywood, laser-cut and hand-assembled in Brooklyn. A modern, sustainable alternative to the traditional Christmas tree that hangs like a mobile and stores flat like a book.',
     features: [
       'Handmade in Brooklyn, NY',
       'Natural birch plywood',
       'Hangs from ceiling or stand',
-      'Includes 24 wooden ornaments',
       'Flat-pack storage',
-      'Patent pending design',
     ],
     images: [
       '/images/trees/alberello-above.jpg',
@@ -25,16 +28,19 @@ export const products = [
     slug: 'the-craig',
     name: 'The Craig',
     tagline: 'Painted Green Edition',
-    price: 250,
+    price: 315,
+    variants: [
+      { label: 'Plain', price: 315 },
+      { label: 'With 1 Set of Decorations', price: 375 },
+      { label: 'With 2 Sets of Decorations', price: 425 },
+    ],
     description:
       'The Craig is our green-painted edition — the same beautiful Alberello spiral design, hand-painted in a rich green finish. Bold, festive, and eye-catching. Each ring is carefully painted by hand in our Brooklyn workshop.',
     features: [
       'Hand-painted green finish',
       'Handmade in Brooklyn, NY',
-      'Includes 24 wooden ornaments',
       'Hangs from ceiling or stand',
       'Flat-pack storage',
-      'Patent pending design',
     ],
     images: [
       '/images/trees/craig-above.jpg',
@@ -50,7 +56,11 @@ export const products = [
     slug: 'decorations',
     name: 'The Decorations',
     tagline: 'Laser-Cut Wooden Ornaments',
-    price: 95,
+    price: 120,
+    variants: [
+      { label: '1 Set (24 ornaments)', price: 120 },
+      { label: '2 Sets (48 ornaments)', price: 200 },
+    ],
     description:
       'Beautiful laser-cut birch plywood ornaments designed to hang from your Alberello. Available in natural wood or hand-painted colors. Stars, snowflakes, moons, and more.',
     features: [
@@ -75,7 +85,7 @@ export const products = [
     slug: 'minitree',
     name: 'The miniTREE',
     tagline: 'Tabletop Holiday Magic',
-    price: 90,
+    price: 115,
     description:
       'A smaller, tabletop version of the Alberello. Stands on its own with a star-shaped base. Perfect for desks, mantels, or small spaces. Available in natural, red, blue, or custom colors.',
     features: [
@@ -86,14 +96,12 @@ export const products = [
       'Handmade in Brooklyn',
     ],
     images: [
-      '/images/mini/minitree.jpg',
       '/images/mini/plain.jpg',
       '/images/mini/red.jpg',
       '/images/mini/blue.jpg',
       '/images/mini/colored.jpg',
-      '/images/mini/minitree-pack.jpg',
     ],
-    thumbnail: '/images/mini/minitree.jpg',
+    thumbnail: '/images/mini/plain.jpg',
   },
 ]
 

@@ -33,7 +33,8 @@ const boxImages = [
   '/images/box/box-closed.jpg',
   '/images/box/box-corners.jpg',
   '/images/box/box-endcorners.jpg',
-  '/images/mini/whatcomes.jpg',
+  '/images/box/bag-on-rings.webp',
+  '/images/box/in-the-bag.webp',
 ]
 
 export default function Box() {

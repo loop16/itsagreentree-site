@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Check, ShoppingCart } from 'lucide-react'
 import { getProduct, products } from '../data/products'
@@ -7,6 +8,11 @@ import ProductCard from '../components/ProductCard'
 export default function ProductDetail() {
   const { slug } = useParams()
   const product = getProduct(slug)
+  const [selectedVariant, setSelectedVariant] = useState(0)
+
+  useEffect(() => {
+    setSelectedVariant(0)
+  }, [slug])
 
   if (!product) {
     return (
@@ -20,6 +26,8 @@ export default function ProductDetail() {
   }
 
   const otherProducts = products.filter((p) => p.slug !== slug)
+  const activeVariant = product.variants ? product.variants[selectedVariant] : null
+  const displayPrice = activeVariant ? activeVariant.price : product.price
 
   return (
     <>
@@ -44,8 +52,30 @@ export default function ProductDetail() {
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-bark">
               {product.name}
             </h1>
-            <p className="mt-2 text-3xl font-semibold text-forest">${product.price}</p>
+            <p className="mt-2 text-3xl font-semibold text-forest">${displayPrice}</p>
             <p className="mt-6 text-wood-dark leading-relaxed">{product.description}</p>
+
+            {/* Variants */}
+            {product.variants && (
+              <div className="mt-6">
+                <p className="text-sm font-medium text-bark mb-3">Options</p>
+                <div className="flex flex-wrap gap-2">
+                  {product.variants.map((variant, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setSelectedVariant(i)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                        selectedVariant === i
+                          ? 'bg-forest text-white border-forest'
+                          : 'bg-white text-bark border-sage-light/50 hover:border-forest'
+                      }`}
+                    >
+                      {variant.label} — ${variant.price}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Features */}
             <ul className="mt-8 space-y-3">
@@ -64,7 +94,7 @@ export default function ProductDetail() {
               className="mt-10 w-full sm:w-auto px-10 py-4 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
             >
               <ShoppingCart size={18} />
-              Add to Cart &mdash; ${product.price}
+              Add to Cart &mdash; ${displayPrice}
             </button>
 
             <p className="mt-4 text-xs text-wood-dark/60">

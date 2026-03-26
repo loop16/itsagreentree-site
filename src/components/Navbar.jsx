@@ -55,19 +55,22 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sage-light/20">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-4 group">
             <img
               src="/images/favicon-tree.png"
               alt="it's a green tree"
-              className="h-10 w-10 object-contain"
+              className="h-12 w-12 object-contain"
             />
             <div className="hidden sm:block">
-              <span className="block text-lg font-display font-bold text-bark leading-tight tracking-tight">
+              <span
+                className="block text-[1.75rem] font-bold text-bark leading-none tracking-[0.06em]"
+                style={{ fontFamily: 'var(--font-avenir)' }}
+              >
                 it's a green tree
               </span>
-              <span className="block text-[10px] tracking-[0.2em] uppercase text-wood-dark">
+              <span className="block text-[10px] tracking-[0.25em] uppercase text-wood-dark mt-1">
                 A Holiday Tree Made in Brooklyn
               </span>
             </div>
@@ -99,7 +102,7 @@ export default function Navbar() {
             </NavLink>
             <DropdownDesktop label="About" links={aboutLinks} />
             <a
-              href="#shop"
+              href="/#products"
               className="ml-2 px-6 py-2.5 bg-forest text-white text-sm font-semibold tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors shadow-md hover:shadow-lg"
             >
               Shop
@@ -186,7 +189,7 @@ export default function Navbar() {
             )}
 
             <a
-              href="#shop"
+              href="/#products"
               className="mt-4 block text-center px-6 py-3 bg-forest text-white text-sm font-semibold tracking-wide uppercase rounded-full"
             >
               Shop
