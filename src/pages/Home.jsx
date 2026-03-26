@@ -218,7 +218,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13].map((i) => (
               <div
                 key={i}
                 className="aspect-square rounded-xl overflow-hidden group"

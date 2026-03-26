@@ -2,16 +2,17 @@ import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const pictures = [
-  { src: '/images/your-trees/1.jpg', alt: 'Community tree 1' },
-  { src: '/images/your-trees/2.jpg', alt: 'Community tree 2' },
-  { src: '/images/your-trees/3.jpg', alt: 'Community tree 3' },
-  { src: '/images/your-trees/4.jpg', alt: 'Community tree 4' },
-  { src: '/images/your-trees/5.jpg', alt: 'Community tree 5' },
-  { src: '/images/your-trees/6.jpg', alt: 'Community tree 6' },
-  { src: '/images/your-trees/7.jpg', alt: 'Community tree 7' },
-  { src: '/images/your-trees/8.jpg', alt: 'Community tree 8' },
-  { src: '/images/your-trees/9.jpg', alt: 'Community tree 9' },
-  { src: '/images/hero.jpg', alt: 'Alberello in a home' },
+  ...Array.from({ length: 19 }, (_, i) => ({
+    src: `/images/your-trees/${i + 1}.jpg`,
+    alt: `Community tree ${i + 1}`,
+  })),
+  { src: '/images/your-trees/20.jpeg', alt: 'Community tree 20' },
+  { src: '/images/your-trees/21.jpeg', alt: 'Community tree 21' },
+  { src: '/images/your-trees/22.jpeg', alt: 'Community tree 22' },
+  ...Array.from({ length: 18 }, (_, i) => ({
+    src: `/images/your-trees/${i + 23}.jpg`,
+    alt: `Community tree ${i + 23}`,
+  })),
 ]
 
 export default function YourPictures() {

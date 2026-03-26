@@ -2,13 +2,13 @@ export const products = [
   {
     slug: 'alberello',
     name: 'The Alberello',
-    tagline: 'The Original Green Tree',
+    tagline: 'The Original Hanging Tree',
     price: 249,
     description:
-      'Our signature hanging holiday tree. Hand-crafted spiral rings in classic green, the Alberello brings a modern, sustainable take on the traditional Christmas tree. Made from birch plywood, laser-cut and hand-painted in Brooklyn.',
+      'The Alberello is our signature hanging holiday tree — the original. Beautiful spiral rings crafted from natural birch plywood, laser-cut and hand-assembled in Brooklyn. A modern, sustainable alternative to the traditional Christmas tree that hangs like a mobile and stores flat like a book.',
     features: [
       'Handmade in Brooklyn, NY',
-      'Sustainable birch plywood',
+      'Natural birch plywood',
       'Hangs from ceiling or stand',
       'Includes 24 wooden ornaments',
       'Flat-pack storage',
@@ -24,12 +24,12 @@ export const products = [
   {
     slug: 'the-craig',
     name: 'The Craig',
-    tagline: 'Natural Wood Elegance',
+    tagline: 'Painted Green Edition',
     price: 249,
     description:
-      'The Craig is our natural wood edition — the same beautiful spiral design in unfinished birch. Warm, minimal, and timeless. Let the beauty of the natural wood grain shine through.',
+      'The Craig is our green-painted edition — the same beautiful Alberello spiral design, hand-painted in a rich green finish. Bold, festive, and eye-catching. Each ring is carefully painted by hand in our Brooklyn workshop.',
     features: [
-      'Natural birch plywood finish',
+      'Hand-painted green finish',
       'Handmade in Brooklyn, NY',
       'Includes 24 wooden ornaments',
       'Hangs from ceiling or stand',

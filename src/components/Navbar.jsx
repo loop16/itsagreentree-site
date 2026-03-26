@@ -59,9 +59,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src="/images/logo-black.png"
+              src="/images/favicon-tree.png"
               alt="it's a green tree"
-              className="h-12 w-12 object-contain"
+              className="h-10 w-10 object-contain"
             />
             <div className="hidden sm:block">
               <span className="block text-lg font-display font-bold text-bark leading-tight tracking-tight">
