@@ -3,7 +3,7 @@ export const products = [
     slug: 'alberello',
     name: 'The Alberello',
     tagline: 'The Original Hanging Tree',
-    price: 249,
+    price: 220,
     description:
       'The Alberello is our signature hanging holiday tree — the original. Beautiful spiral rings crafted from natural birch plywood, laser-cut and hand-assembled in Brooklyn. A modern, sustainable alternative to the traditional Christmas tree that hangs like a mobile and stores flat like a book.',
     features: [
@@ -25,7 +25,7 @@ export const products = [
     slug: 'the-craig',
     name: 'The Craig',
     tagline: 'Painted Green Edition',
-    price: 249,
+    price: 250,
     description:
       'The Craig is our green-painted edition — the same beautiful Alberello spiral design, hand-painted in a rich green finish. Bold, festive, and eye-catching. Each ring is carefully painted by hand in our Brooklyn workshop.',
     features: [
@@ -50,7 +50,7 @@ export const products = [
     slug: 'decorations',
     name: 'The Decorations',
     tagline: 'Laser-Cut Wooden Ornaments',
-    price: 49,
+    price: 95,
     description:
       'Beautiful laser-cut birch plywood ornaments designed to hang from your Alberello. Available in natural wood or hand-painted colors. Stars, snowflakes, moons, and more.',
     features: [
@@ -75,7 +75,7 @@ export const products = [
     slug: 'minitree',
     name: 'The miniTREE',
     tagline: 'Tabletop Holiday Magic',
-    price: 89,
+    price: 90,
     description:
       'A smaller, tabletop version of the Alberello. Stands on its own with a star-shaped base. Perfect for desks, mantels, or small spaces. Available in natural, red, blue, or custom colors.',
     features: [
