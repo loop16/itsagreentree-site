@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { productName, variantLabel, price, slug, quantity = 1 } = req.body
+  const { productName, variantLabel, price, slug, description, quantity = 1 } = req.body
 
   if (!productName || !price) {
     return res.status(400).json({ error: 'Missing required fields' })
@@ -24,6 +24,7 @@ export default async function handler(req, res) {
             currency: 'usd',
             product_data: {
               name: variantLabel ? `${productName} — ${variantLabel}` : productName,
+                description: description || undefined,
             },
             unit_amount: Math.round(price * 100),
           },

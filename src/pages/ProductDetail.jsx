@@ -41,6 +41,7 @@ export default function ProductDetail() {
           productName: product.name,
           variantLabel: activeVariant?.label,
           price: displayPrice,
+          description: product.description,
         }),
       })
       const data = await res.json()
