@@ -1,13 +1,13 @@
-import Stripe from 'stripe'
+const Stripe = require('stripe')
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { productName, variantLabel, price, quantity = 1 } = req.body
+  const { productName, variantLabel, price, slug, quantity = 1 } = req.body
 
   if (!productName || !price) {
     return res.status(400).json({ error: 'Missing required fields' })
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       ],
       mode: 'payment',
       success_url: `${origin}/success`,
-      cancel_url: `${origin}/product/${req.body.slug}`,
+      cancel_url: `${origin}/product/${slug}`,
     })
 
     res.status(200).json({ url: session.url })
