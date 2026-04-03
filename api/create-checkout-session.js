@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { productName, variantLabel, price, slug, description, quantity = 1 } = req.body
+  const { productName, variantLabel, price, slug, description, shippingZone, quantity = 1 } = req.body
 
   if (!productName || !price) {
     return res.status(400).json({ error: 'Missing required fields' })
@@ -34,18 +34,12 @@ export default async function handler(req, res) {
   const origin = req.headers.origin || 'https://itsagreentree-site.vercel.app'
 
   try {
-    const [usRate, intlRate] = await Promise.all([
-      stripe.shippingRates.create({
-        display_name: 'US Shipping',
-        type: 'fixed_amount',
-        fixed_amount: { amount: 3500, currency: 'usd' },
-      }),
-      stripe.shippingRates.create({
-        display_name: 'International Shipping',
-        type: 'fixed_amount',
-        fixed_amount: { amount: 5000, currency: 'usd' },
-      }),
-    ])
+    const isUS = shippingZone !== 'international'
+    const shippingRate = await stripe.shippingRates.create({
+      display_name: isUS ? 'US Shipping' : 'International Shipping',
+      type: 'fixed_amount',
+      fixed_amount: { amount: isUS ? 3500 : 5000, currency: 'usd' },
+    })
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -66,10 +60,7 @@ export default async function handler(req, res) {
       shipping_address_collection: {
         allowed_countries: ALL_COUNTRIES,
       },
-      shipping_options: [
-        { shipping_rate: usRate.id },
-        { shipping_rate: intlRate.id },
-      ],
+      shipping_options: [{ shipping_rate: shippingRate.id }],
       success_url: `${origin}/success`,
       cancel_url: `${origin}/product/${slug}`,
     })

@@ -26,6 +26,7 @@ export default function ProductDetail() {
   }
 
   const [loading, setLoading] = useState(false)
+  const [shippingZone, setShippingZone] = useState('us')
   const otherProducts = products.filter((p) => p.slug !== slug)
   const activeVariant = product.variants ? product.variants[selectedVariant] : null
   const displayPrice = activeVariant ? activeVariant.price : product.price
@@ -42,6 +43,7 @@ export default function ProductDetail() {
           variantLabel: activeVariant?.label,
           price: displayPrice,
           description: product.description,
+          shippingZone,
         }),
       })
       const data = await res.json()
@@ -114,6 +116,33 @@ export default function ProductDetail() {
               ))}
             </ul>
 
+            {/* Shipping destination */}
+            <div className="mt-8">
+              <p className="text-sm font-medium text-bark mb-3">Shipping to</p>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setShippingZone('us')}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                    shippingZone === 'us'
+                      ? 'bg-forest text-white border-forest'
+                      : 'bg-white text-bark border-sage-light/50 hover:border-forest'
+                  }`}
+                >
+                  United States — $35
+                </button>
+                <button
+                  onClick={() => setShippingZone('international')}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                    shippingZone === 'international'
+                      ? 'bg-forest text-white border-forest'
+                      : 'bg-white text-bark border-sage-light/50 hover:border-forest'
+                  }`}
+                >
+                  International — $50
+                </button>
+              </div>
+            </div>
+
             {/* Buy button */}
             <button
               onClick={handleCheckout}
@@ -125,7 +154,7 @@ export default function ProductDetail() {
             </button>
 
             <p className="mt-4 text-xs text-wood-dark/60">
-              Free shipping within the US. Handmade to order.
+              {shippingZone === 'us' ? '$35 shipping within the US.' : '$50 international shipping.'} Handmade to order.
             </p>
           </div>
         </div>
