@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 public/video/alberello-2019.mp4
 .vercel
+.env
+.env.local
+.env*.local

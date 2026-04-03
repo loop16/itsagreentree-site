@@ -15,6 +15,7 @@ import FAQ from './pages/FAQ'
 import YourPictures from './pages/YourPictures'
 import Contact from './pages/Contact'
 import Story from './pages/Story'
+import Success from './pages/Success'
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/your-pictures" element={<YourPictures />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/story" element={<Story />} />
+        <Route path="/success" element={<Success />} />
       </Route>
     </Routes>
     </>

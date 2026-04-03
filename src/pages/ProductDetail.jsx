@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, Check, ShoppingCart } from 'lucide-react'
+import { ArrowLeft, Check, ShoppingCart, Loader } from 'lucide-react'
 import { getProduct, products } from '../data/products'
 import ImageGallery from '../components/ImageGallery'
 import ProductCard from '../components/ProductCard'
@@ -25,9 +25,33 @@ export default function ProductDetail() {
     )
   }
 
+  const [loading, setLoading] = useState(false)
   const otherProducts = products.filter((p) => p.slug !== slug)
   const activeVariant = product.variants ? product.variants[selectedVariant] : null
   const displayPrice = activeVariant ? activeVariant.price : product.price
+
+  async function handleCheckout() {
+    setLoading(true)
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          slug: product.slug,
+          productName: product.name,
+          variantLabel: activeVariant?.label,
+          price: displayPrice,
+        }),
+      })
+      const data = await res.json()
+      if (data.url) window.location.href = data.url
+      else throw new Error(data.error)
+    } catch (err) {
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <>
@@ -91,10 +115,12 @@ export default function ProductDetail() {
 
             {/* Buy button */}
             <button
-              className="mt-10 w-full sm:w-auto px-10 py-4 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+              onClick={handleCheckout}
+              disabled={loading}
+              className="mt-10 w-full sm:w-auto px-10 py-4 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              <ShoppingCart size={18} />
-              Add to Cart &mdash; ${displayPrice}
+              {loading ? <Loader size={18} className="animate-spin" /> : <ShoppingCart size={18} />}
+              {loading ? 'Redirecting…' : `Buy Now — $${displayPrice}`}
             </button>
 
             <p className="mt-4 text-xs text-wood-dark/60">
