@@ -58,7 +58,7 @@ export default async function handler(req, res) {
       ],
       mode: 'payment',
       shipping_address_collection: {
-        allowed_countries: ALL_COUNTRIES,
+        allowed_countries: isUS ? ['US', 'CA'] : ALL_COUNTRIES,
       },
       shipping_options: [{ shipping_rate: shippingRate.id }],
       success_url: `${origin}/success`,
