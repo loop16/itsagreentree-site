@@ -57,6 +57,11 @@ export default async function handler(req, res) {
         },
       ],
       mode: 'payment',
+      custom_text: isUS ? {
+        shipping_address: {
+          message: 'This shipping option covers the US and Canada only. If you need international shipping, please go back and select International Shipping.',
+        },
+      } : undefined,
       shipping_address_collection: {
         allowed_countries: isUS ? ['US', 'CA'] : ALL_COUNTRIES,
       },
