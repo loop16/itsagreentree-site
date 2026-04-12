@@ -1,18 +1,12 @@
 import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
-const pictures = [
-  ...Array.from({ length: 19 }, (_, i) => ({
-    src: `/images/your-trees/${i + 1}.jpg`,
-    alt: `Community tree ${i + 1}`,
-  })),
-  { src: '/images/your-trees/20.jpeg', alt: 'Community tree 20' },
-  { src: '/images/your-trees/21.jpeg', alt: 'Community tree 21' },
-  { src: '/images/your-trees/22.jpeg', alt: 'Community tree 22' },
-  ...Array.from({ length: 18 }, (_, i) => i + 23)
-    .filter((n) => n !== 32)
-    .map((n) => ({ src: `/images/your-trees/${n}.jpg`, alt: `Community tree ${n}` })),
-]
+const KEEP = [1,2,3,4,5,6,7,8,9,10,11,12,16,20,21,22,24,26,31,33,34,36,37,40]
+
+const pictures = KEEP.map((n) => {
+  const ext = [20, 21, 22].includes(n) ? 'jpeg' : 'jpg'
+  return { src: `/images/your-trees/${n}.${ext}`, alt: `Community tree ${n}` }
+})
 
 export default function YourPictures() {
   const [lightbox, setLightbox] = useState(null)
