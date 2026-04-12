@@ -28,11 +28,11 @@ export const products = [
     slug: 'the-craig',
     name: 'The Craig',
     tagline: 'Painted Green Edition',
-    price: 315,
+    price: 325,
     variants: [
-      { label: 'Plain', price: 315 },
-      { label: 'With 1 Set of Decorations', price: 375 },
-      { label: 'With 2 Sets of Decorations', price: 425 },
+      { label: 'Plain', price: 325 },
+      { label: 'With 1 Set of Decorations', price: 385 },
+      { label: 'With 2 Sets of Decorations', price: 435 },
     ],
     description:
       'The Craig is our green-painted edition — the same beautiful Alberello spiral design, hand-painted in a rich green finish. Bold, festive, and eye-catching. Each ring is carefully painted by hand in our Brooklyn workshop.',
