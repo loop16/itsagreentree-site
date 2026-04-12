@@ -147,6 +147,13 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
+              <div className="absolute -top-4 -left-4 w-28 h-28 rounded-xl overflow-hidden shadow-lg border-4 border-warm hidden lg:block">
+                <img
+                  src="/images/decorations/color-decor-sp1.jpg"
+                  alt="Custom colored tree"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div>
               <p className="text-sm font-medium tracking-[0.2em] uppercase text-sage mb-2">
@@ -158,13 +165,6 @@ export default function Home() {
               <p className="mt-4 text-wood-dark leading-relaxed">
                 {customizeInfo.description}
               </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 mt-6 px-8 py-3.5 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors"
-              >
-                Contact Us
-                <ArrowRight size={16} />
-              </Link>
             </div>
           </div>
         </div>

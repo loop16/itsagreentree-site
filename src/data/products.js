@@ -108,7 +108,7 @@ export const products = [
 export const customizeInfo = {
   title: 'Customize Your Tree',
   description:
-    'Make it truly yours. Choose custom colors for your rings, mix and match painted ornaments, or go fully custom with your own color scheme. Contact us to discuss your vision.',
+    'Make it truly yours. Choose custom colors for your rings, mix and match painted ornaments, or go fully custom with your own color scheme.',
   image: '/images/trees/customized-square.jpg',
   images: [
     '/images/trees/customized.jpg',
