@@ -13,6 +13,7 @@ export default function Home() {
             src="/images/trees/threetrees.jpg"
             alt="Three Alberello trees"
             className="w-full h-full object-cover"
+            fetchPriority="high"
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
