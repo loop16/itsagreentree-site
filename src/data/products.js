@@ -62,11 +62,11 @@ export const products = [
       { label: '2 Sets (48 ornaments)', price: 200 },
     ],
     description:
-      'Beautiful laser-cut birch plywood ornaments designed to hang from your Alberello. Available in natural wood or hand-painted colors. Stars, snowflakes, moons, and more.',
+      'Beautiful laser-cut birch plywood ornaments designed to hang from your Alberello. Natural birch plywood in a variety of shapes — stars, snowflakes, moons, and more.',
     features: [
       'Set of 24 ornaments',
       'Laser-cut birch plywood',
-      'Available in natural or colored',
+      'Natural birch plywood finish',
       'Multiple shapes and designs',
       'Lightweight and durable',
     ],
