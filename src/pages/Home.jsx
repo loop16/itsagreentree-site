@@ -22,7 +22,7 @@ export default function Home() {
             <p className="relative z-10 text-forest text-sm font-medium tracking-[0.25em] uppercase mb-4">
               <span className="relative">
                 <span className="absolute -inset-x-4 -inset-y-2 -z-10 pointer-events-none" aria-hidden="true">
-                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b1" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur in="SourceGraphic" stdDeviation="18" /></filter></defs><rect width="100%" height="100%" fill="rgba(240,244,240,0.95)" filter="url(#b1)" /></svg>
+                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b1" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur in="SourceGraphic" stdDeviation="18" /></filter></defs><rect width="100%" height="100%" fill="rgba(255,255,255,0.95)" filter="url(#b1)" /></svg>
                 </span>
                 Handmade in Brooklyn &middot; Est. 2018
               </span>
@@ -30,13 +30,13 @@ export default function Home() {
             <h1 className="relative z-10 font-display text-4xl sm:text-5xl md:text-6xl font-bold text-[#1a1a1a] leading-tight">
               <span className="relative inline">
                 <span className="absolute -inset-x-5 -inset-y-2 -z-10 pointer-events-none" aria-hidden="true">
-                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b2" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur in="SourceGraphic" stdDeviation="22" /></filter></defs><rect width="100%" height="100%" fill="rgba(240,244,240,0.95)" filter="url(#b2)" /></svg>
+                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b2" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur in="SourceGraphic" stdDeviation="22" /></filter></defs><rect width="100%" height="100%" fill="rgba(255,255,255,0.95)" filter="url(#b2)" /></svg>
                 </span>
                 A Modern Holiday Tree
               </span>{' '}
               <span className="relative inline">
                 <span className="absolute -inset-x-5 -inset-y-2 -z-10 pointer-events-none" aria-hidden="true">
-                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b3" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur in="SourceGraphic" stdDeviation="22" /></filter></defs><rect width="100%" height="100%" fill="rgba(240,244,240,0.95)" filter="url(#b3)" /></svg>
+                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b3" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur in="SourceGraphic" stdDeviation="22" /></filter></defs><rect width="100%" height="100%" fill="rgba(255,255,255,0.95)" filter="url(#b3)" /></svg>
                 </span>
                 <span className="text-forest italic">That Lasts Forever</span>
               </span>
@@ -44,7 +44,7 @@ export default function Home() {
             <p className="relative z-10 mt-6 text-lg text-[#444] max-w-lg leading-relaxed">
               <span className="relative">
                 <span className="absolute -inset-y-6 -left-6 -z-10 pointer-events-none" style={{ right: '-8rem' }} aria-hidden="true">
-                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b4" x="-30%" y="-60%" width="200%" height="220%"><feGaussianBlur in="SourceGraphic" stdDeviation="42" /></filter></defs><rect width="100%" height="100%" fill="rgba(240,244,240,0.97)" filter="url(#b4)" /></svg>
+                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b4" x="-30%" y="-60%" width="200%" height="220%"><feGaussianBlur in="SourceGraphic" stdDeviation="42" /></filter></defs><rect width="100%" height="100%" fill="rgba(255,255,255,0.97)" filter="url(#b4)" /></svg>
                 </span>
                 The Alberello is a sustainable, beautifully crafted alternative to the
                 traditional Christmas tree. Made from birch plywood, designed to be treasured
@@ -60,7 +60,7 @@ export default function Home() {
               </a>
               <span className="relative">
                 <span className="absolute -inset-x-3 -inset-y-1 -z-10 pointer-events-none" aria-hidden="true">
-                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b5" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur in="SourceGraphic" stdDeviation="14" /></filter></defs><rect width="100%" height="100%" fill="rgba(240,244,240,0.9)" filter="url(#b5)" /></svg>
+                  <svg width="100%" height="100%" style={{ overflow: 'visible' }}><defs><filter id="b5" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur in="SourceGraphic" stdDeviation="14" /></filter></defs><rect width="100%" height="100%" fill="rgba(255,255,255,0.9)" filter="url(#b5)" /></svg>
                 </span>
                 <a
                   href="https://vimeo.com/371690517"
