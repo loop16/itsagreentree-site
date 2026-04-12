@@ -3,7 +3,11 @@ import { useEffect } from 'react'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }, [pathname])
   return null
 }
 import Layout from './components/Layout'
@@ -14,6 +18,7 @@ import About from './pages/About'
 import FAQ from './pages/FAQ'
 import YourPictures from './pages/YourPictures'
 import Contact from './pages/Contact'
+import Customize from './pages/Customize'
 import Story from './pages/Story'
 import Success from './pages/Success'
 
@@ -30,6 +35,7 @@ export default function App() {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/your-pictures" element={<YourPictures />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/customize" element={<Customize />} />
         <Route path="/story" element={<Story />} />
         <Route path="/success" element={<Success />} />
       </Route>

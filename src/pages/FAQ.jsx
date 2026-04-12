@@ -73,7 +73,7 @@ export default function FAQ() {
 
           <FAQItem q="What is the Alberello made of?">
             <TextAnswer>
-              The Alberello is made from sustainably sourced 0.25 inch / 5 mm thick birch plywood. The rings and decorations are laser-cut and hand-finished in our Brooklyn workshop. The support wires are coated steel.
+              The Alberello is made from sustainably sourced 0.25 inch / 5 mm thick birch plywood. The rings and decorations are laser-cut and hand-finished in our Brooklyn workshop.
             </TextAnswer>
           </FAQItem>
 
@@ -142,7 +142,7 @@ export default function FAQ() {
 
           <FAQItem q="Do you ship internationally?">
             <TextAnswer>
-              Currently we ship within the United States. International shipping is available on request — please contact us for a quote.
+              Yes! We ship to the United States, Canada, and Europe. Shipping to the US and Canada is $35. Shipping to Europe is $50.
             </TextAnswer>
           </FAQItem>
 
@@ -169,12 +169,12 @@ export default function FAQ() {
         <div className="mt-12 text-center bg-warm rounded-2xl p-10">
           <p className="font-display text-lg font-semibold text-bark">Still have questions?</p>
           <p className="mt-2 text-wood-dark text-sm">We'd love to hear from you.</p>
-          <Link
-            to="/contact"
+          <a
+            href="mailto:info@itsagreentree.com"
             className="inline-block mt-4 px-8 py-3 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors"
           >
-            Contact Us
-          </Link>
+            Email Us
+          </a>
         </div>
       </div>
     </>

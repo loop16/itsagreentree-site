@@ -165,6 +165,20 @@ export default function Home() {
               <p className="mt-4 text-wood-dark leading-relaxed">
                 {customizeInfo.description}
               </p>
+              <div className="mt-6 flex flex-wrap gap-4">
+                <Link
+                  to="/customize"
+                  className="inline-flex items-center gap-2 text-forest font-medium text-sm hover:underline"
+                >
+                  Learn More →
+                </Link>
+                <Link
+                  to="/your-pictures"
+                  className="inline-flex items-center gap-2 text-forest font-medium text-sm hover:underline"
+                >
+                  See how others decorated theirs →
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
-const KEEP = [1,2,3,4,5,6,7,8,9,10,11,12,16,20,21,22,24,26,31,33,34,36,37,40]
+const KEEP = [1,2,3,4,5,6,7,8,9,10,11,12,16,20,21,22,24,26,31,33,34,36,37,40,41,42,43,44,45]
 
 const pictures = KEEP.map((n) => {
   const ext = [20, 21, 22].includes(n) ? 'jpeg' : 'jpg'

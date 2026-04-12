@@ -61,12 +61,6 @@ export default function Footer() {
               </li>
               <li className="text-sm opacity-60">Brooklyn, New York</li>
             </ul>
-            <Link
-              to="/contact"
-              className="inline-block mt-4 px-5 py-2 border border-white/30 text-sm text-white rounded-full hover:bg-white/10 transition-colors"
-            >
-              Get in Touch
-            </Link>
           </div>
         </div>
 
