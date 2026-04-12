@@ -87,19 +87,16 @@ export const products = [
     tagline: 'Tabletop Holiday Magic',
     price: 115,
     description:
-      'A smaller, tabletop version of the Alberello. Stands on its own with a star-shaped base. Perfect for desks, mantels, or small spaces. Available in natural, red, blue, or custom colors.',
+      'A smaller, tabletop version of the Alberello. Stands on its own with a star-shaped base. Perfect for desks, mantels, or small spaces. Natural birch plywood finish.',
     features: [
       'Freestanding tabletop design',
       'Star-shaped wooden base',
-      'Multiple color options',
+      'Natural birch plywood finish',
       'Flat-pack storage',
       'Handmade in Brooklyn',
     ],
     images: [
       '/images/mini/plain.jpg',
-      '/images/mini/red.jpg',
-      '/images/mini/blue.jpg',
-      '/images/mini/colored.jpg',
     ],
     thumbnail: '/images/mini/plain.jpg',
   },
