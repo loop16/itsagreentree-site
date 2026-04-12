@@ -58,10 +58,8 @@ export const products = [
     tagline: 'Laser-Cut Wooden Ornaments',
     price: 120,
     variants: [
-      { label: 'Natural — 1 Set (24 ornaments)', price: 120 },
-      { label: 'Natural — 2 Sets (48 ornaments)', price: 200 },
-      { label: 'Colored — 1 Set (24 ornaments)', price: 120 },
-      { label: 'Colored — 2 Sets (48 ornaments)', price: 200 },
+      { label: '1 Set (24 ornaments)', price: 120 },
+      { label: '2 Sets (48 ornaments)', price: 200 },
     ],
     description:
       'Beautiful laser-cut birch plywood ornaments designed to hang from your Alberello. Available in natural wood or hand-painted colors. Stars, snowflakes, moons, and more.',
@@ -88,12 +86,6 @@ export const products = [
     name: 'The miniTREE',
     tagline: 'Tabletop Holiday Magic',
     price: 115,
-    variants: [
-      { label: 'Natural', price: 115 },
-      { label: 'Red', price: 115 },
-      { label: 'Blue', price: 115 },
-      { label: 'Multicolor', price: 115 },
-    ],
     description:
       'A smaller, tabletop version of the Alberello. Stands on its own with a star-shaped base. Perfect for desks, mantels, or small spaces. Available in natural, red, blue, or custom colors.',
     features: [
