@@ -1,6 +1,7 @@
 export const products = [
   {
     slug: 'alberello',
+    soldOut: true,
     name: 'The Alberello',
     tagline: 'The Original Hanging Tree',
     price: 275,
@@ -26,6 +27,7 @@ export const products = [
   },
   {
     slug: 'the-craig',
+    soldOut: true,
     name: 'The Craig',
     tagline: 'Painted Green Edition',
     price: 325,
@@ -54,6 +56,7 @@ export const products = [
   },
   {
     slug: 'decorations',
+    soldOut: true,
     name: 'The Decorations',
     tagline: 'Laser-Cut Wooden Ornaments',
     price: 120,
@@ -83,6 +86,7 @@ export const products = [
   },
   {
     slug: 'minitree',
+    soldOut: true,
     name: 'The miniTREE',
     tagline: 'Tabletop Holiday Magic',
     price: 115,
@@ -114,6 +118,10 @@ export const customizeInfo = {
     '/images/decorations/color-decor-sp1.jpg',
     '/images/decorations/color-decor-sp2.jpg',
   ],
+}
+
+export function isSoldOut(product) {
+  return Boolean(product?.soldOut)
 }
 
 export function getProduct(slug) {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, Check, ShoppingCart, Loader } from 'lucide-react'
-import { getProduct, products } from '../data/products'
+import { ArrowLeft, Check, ShoppingCart, Loader, PackageX } from 'lucide-react'
+import { getProduct, products, isSoldOut } from '../data/products'
 import ImageGallery from '../components/ImageGallery'
 import ProductCard from '../components/ProductCard'
 
@@ -9,6 +9,8 @@ export default function ProductDetail() {
   const { slug } = useParams()
   const product = getProduct(slug)
   const [selectedVariant, setSelectedVariant] = useState(0)
+  const [loading, setLoading] = useState(false)
+  const [shippingZone, setShippingZone] = useState('us')
 
   useEffect(() => {
     setSelectedVariant(0)
@@ -25,13 +27,13 @@ export default function ProductDetail() {
     )
   }
 
-  const [loading, setLoading] = useState(false)
-  const [shippingZone, setShippingZone] = useState('us')
+  const soldOut = isSoldOut(product)
   const otherProducts = products.filter((p) => p.slug !== slug)
   const activeVariant = product.variants ? product.variants[selectedVariant] : null
   const displayPrice = activeVariant ? activeVariant.price : product.price
 
   async function handleCheckout() {
+    if (soldOut) return
     setLoading(true)
     try {
       const res = await fetch('/api/create-checkout-session', {
@@ -79,7 +81,14 @@ export default function ProductDetail() {
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-bark">
               {product.name}
             </h1>
-            <p className="mt-2 text-3xl font-semibold text-forest">${displayPrice}</p>
+            <div className="mt-2 flex items-center gap-3">
+              <p className="text-3xl font-semibold text-forest">${displayPrice}</p>
+              {soldOut && (
+                <span className="px-3 py-1 rounded-full bg-bark text-white text-xs font-semibold uppercase tracking-wider">
+                  Sold Out
+                </span>
+              )}
+            </div>
             <p className="mt-6 text-wood-dark leading-relaxed">{product.description}</p>
 
             {/* Variants */}
@@ -117,9 +126,10 @@ export default function ProductDetail() {
             </ul>
 
             {/* Shipping destination */}
+            {!soldOut && (
             <div className="mt-8">
               <p className="text-sm font-medium text-bark mb-3">Shipping to</p>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => setShippingZone('us')}
                   className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
@@ -142,20 +152,42 @@ export default function ProductDetail() {
                 </button>
               </div>
             </div>
+            )}
 
             {/* Buy button */}
-            <button
-              onClick={handleCheckout}
-              disabled={loading}
-              className="mt-10 w-full sm:w-auto px-10 py-4 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
-            >
-              {loading ? <Loader size={18} className="animate-spin" /> : <ShoppingCart size={18} />}
-              {loading ? 'Redirecting…' : `Buy Now — $${displayPrice}`}
-            </button>
+            {soldOut ? (
+              <>
+                <button
+                  disabled
+                  className="mt-10 w-full sm:w-auto px-10 py-4 bg-sage-light/40 text-bark/60 font-semibold text-sm tracking-wide uppercase rounded-full flex items-center justify-center gap-3 cursor-not-allowed"
+                >
+                  <PackageX size={18} />
+                  Sold Out
+                </button>
+                <p className="mt-4 text-xs text-wood-dark/60">
+                  This item is currently sold out.{' '}
+                  <Link to="/contact" className="text-forest hover:underline">
+                    Contact us
+                  </Link>{' '}
+                  to be notified when it&rsquo;s back.
+                </p>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={handleCheckout}
+                  disabled={loading}
+                  className="mt-10 w-full sm:w-auto px-10 py-4 bg-forest text-white font-semibold text-sm tracking-wide uppercase rounded-full hover:bg-forest-light transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {loading ? <Loader size={18} className="animate-spin" /> : <ShoppingCart size={18} />}
+                  {loading ? 'Redirecting…' : `Buy Now — $${displayPrice}`}
+                </button>
 
-            <p className="mt-4 text-xs text-wood-dark/60">
-              {shippingZone === 'us' ? '$35 shipping within the US.' : '$50 international shipping.'} Handmade to order.
-            </p>
+                <p className="mt-4 text-xs text-wood-dark/60">
+                  {shippingZone === 'us' ? '$35 shipping within the US.' : '$50 international shipping.'} Handmade to order.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
